@@ -1,33 +1,24 @@
 public class PalindromeCheckerApp {
-    public static void main(String[] args){
-        String original = "level";
+
+    public static void main(String[] args) {
+
+        String word = "madam";
+        java.util.Stack<Character> stack = new java.util.Stack<>();
+
+        for (int i = 0; i < word.length(); i++) {
+            stack.push(word.charAt(i));
+        }
 
         String reversed = "";
 
-        for (int i = original.length() - 1; i >= 0; i--) {
-            reversed = reversed + original.charAt(i);
+        while (!stack.isEmpty()) {
+            reversed = reversed + stack.pop();
         }
 
-        if (original.equals(reversed)) {
-            System.out.println(original + " is a Palindrome.");
+        if (word.equals(reversed)) {
+            System.out.println(word + " is a palindrome");
         } else {
-            System.out.println(original + " is NOT a Palindrome.");
+            System.out.println(word + " is not a palindrome");
         }
-    public static void main() {
-        String str ="madam";
-        boolean ispal =true;
-        for (int i=0;i<str.length()/2;i++){
-            if (str.charAt(i) != str.charAt(str.length()-1-i)){
-                ispal = false;
-                break;
-            }
-        }
-        if(ispal){
-            System.out.println(str+" is palindrone");
-        }
-        else{
-            System.out.println(str+" is not a palindrone");
-        }
-
     }
 }
